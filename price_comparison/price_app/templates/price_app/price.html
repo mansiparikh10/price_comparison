@@ -1,0 +1,13 @@
+{% extends 'price_app/base.html' %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block content %}
+<p>Please use the following form to add the items for your favorite store</p>
+<form action="{% url 'item' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
+
