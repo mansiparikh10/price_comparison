@@ -3,7 +3,7 @@
 **Title:- STORE: Price Comparison Web Application****
 
 **Introduction:**
-Welcome to the presentation of STORE, a price comparison web application built using Django. In this project, I aim to provide users with a convenient platform to compare prices of various items across different offline stores. By leveraging Django's powerful framework, I will create a user-friendly interface that allows users to search for items, view their prices, and make informed purchasing decisions.
+Welcome to the presentation of STORE, a price comparison web application built using Django. In this project, I aim to provide users with a convenient platform to compare the prices of various items across different offline stores. By leveraging Django's powerful framework, I will create a user-friendly interface that allows users to search for items, view their prices, and make informed purchasing decisions.
 
 **Motivation:**
 This project is born out of the personal experience and the desire to overcome the challenges faced by individuals arriving in the United States for the first time. As the creator of this project, I myself encountered difficulties when navigating through various Indian grocery stores to buy groceries and vegetables. I noticed that even though the items were similar in terms of brand and quantity, the prices varied significantly from store to store. Remembering the prices or maintaining records using Microsoft Excel became cumbersome and time-consuming after returning home. This application can potentially save hundreds of dollars for each household every year.
@@ -25,7 +25,7 @@ Users have the option to create an account by entering a unique user ID and pass
 Authentication mechanisms ensure secure access to user-specific data and personalized features.
 Search and Item Comparison:
 Users can search for items by their name, category, or brand.
-The application retrieves relevant items from the database, along with their prices and quantities.
+The application retrieves relevant items, prices, and quantities from the database.
 Users can compare the prices of the same item across different stores.
 Store Information:
 Users can view detailed information about each store, including its name, zip code, and location.
