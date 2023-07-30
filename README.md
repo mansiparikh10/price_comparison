@@ -1,4 +1,4 @@
-**PROJECT PROPOSAL** k
+**PROJECT PROPOSAL**
 
 **Title:- STORE: Price Comparison Web Application****
 
