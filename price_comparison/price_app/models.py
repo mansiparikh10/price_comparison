@@ -46,8 +46,8 @@ class StoreItem(models.Model):
     item_price = models.DecimalField(max_digits=6, decimal_places=2)
     item_quantity = models.IntegerField()
     item_measure = models.CharField(max_length=3, null=True, choices=STOREITEM_MEASURES)
-
+    added_on = models.DateTimeField()
 class AddStoreItemForm(ModelForm):
     class Meta:
         model = StoreItem
-        fields = ['store_name', 'store_location','store_zipcode', 'item_name', 'item_category', 'item_brand', 'item_price','item_quantity', 'item_measure']
+        fields = ['store_name', 'store_location','store_zipcode', 'item_name', 'item_category', 'item_brand', 'item_price','item_quantity', 'item_measure', 'added_on']
