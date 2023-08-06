@@ -1,9 +1,11 @@
 from django.http import HttpResponse, HttpResponseRedirect
-
 from django.shortcuts import render
 from django.urls import reverse
 from .models import AddItemForm
-from .models import AddStoreItemForm, StoreItem
+from .models import AddStoreItemForm, StoreItem, Store
+from rest_framework import viewsets
+from .serializers import StoreItemSerializer, StoreSerializer
+
 def index(request):
     store_items = StoreItem.objects.all()
     stores = StoreItem.objects.values('store_name', 'store_location').distinct()
@@ -33,3 +35,20 @@ def storeitem(request):
         form = AddStoreItemForm()
 
     return render(request, 'price_app/storeprice.html', {'form': form})
+
+class StoreItemViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = StoreItem.objects.all().order_by('added_on')
+    serializer_class = StoreItemSerializer
+    permission_classes = []
+
+
+class StoreViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Store.objects.all()
+    serializer_class = StoreSerializer
+    permission_classes = []

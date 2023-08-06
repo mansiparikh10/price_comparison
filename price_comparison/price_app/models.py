@@ -7,11 +7,13 @@ class User(models.Model):
 class Store(models.Model):
     name = models.CharField(max_length=64)
     location = models.CharField(max_length=256)
-    zipcode = models.IntegerField()
+    zipcode = models.CharField(max_length=10)
 
 class Item(models.Model):
     ITEM_MEASURES = (
         ('KG', 'Kilogram'),
+        ('GL', 'Gallons'),
+        ('LT', 'Litres'),
         ('LB', 'Pound'),
         ('OZ', 'Ounce'),
         ('GMS', 'Gram'),
@@ -32,6 +34,8 @@ class AddItemForm(ModelForm):
 class StoreItem(models.Model):
     STOREITEM_MEASURES = (
         ('KG', 'Kilogram'),
+        ('GL', 'Gallons'),
+        ('LT', 'Litres'),
         ('LB', 'Pound'),
         ('OZ', 'Ounce'),
         ('GMS', 'Gram'),
@@ -39,7 +43,7 @@ class StoreItem(models.Model):
     )
     store_name = models.CharField(max_length=64)
     store_location = models.CharField(max_length=256)
-    store_zipcode = models.IntegerField()
+    store_zipcode = models.CharField(max_length=10)
     item_name = models.CharField(max_length=64)
     item_category = models.CharField(max_length=64)
     item_brand = models.CharField(max_length=64)
