@@ -4,12 +4,28 @@
 
 {% block content %}
 <p>Please use the following form to add the items for your favorite store</p>
-<form action="{% url 'storeitem' %}" method="post">
+<form action="{% url 'storeitem' %}" method="post" id="storeItemForm">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" id="submitButton">
 </form>
 <script> 
     flatpickr("#id_added_on", {enableTime: true, dateFormat: "Y-m-d H:i"}); 
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const submitButton = document.getElementById("submitButton");
+        const storeItemForm = document.getElementById("storeItemForm");
+
+        submitButton.addEventListener("click", function(event) {
+            event.preventDefault(); 
+
+            if (confirm("Are you sure that you want to submit this information?")) {
+                alert("Form submission confirmed! The form will be submitted.");
+                storeItemForm.submit(); // Submit the form
+            } else {
+                alert("Form submission canceled.");
+            }
+        });
+    });
 </script>
 {% endblock %}
