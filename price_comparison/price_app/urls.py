@@ -13,4 +13,5 @@ urlpatterns = [
     path('storeprice', views.storeitem, name='storeitem'),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-]
+    path("get_store_locations/", views.get_store_locations, name="get_store_locations"),
+] 
